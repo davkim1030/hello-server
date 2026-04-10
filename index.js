@@ -10,11 +10,11 @@ const supabase = createClient(
 );
 
 app.get('/', async (req, res) => {
-  await supabase.from('visits').insert({});
+  await supabase.from('visits').insert({ visited_at: new Date().toISOString() });
 
   const { data } = await supabase
     .from('visits')
-    .select('id');
+    .select('id';
 
   res.send(`Hello World! 총 방문 횟수: ${data?.length ?? 0}`);
 });
