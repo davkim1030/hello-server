@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
 
   const { data } = await supabase
     .from('visits')
-    .select('id';
+    .select('id');
 
   res.send(`Hello World! 총 방문 횟수: ${data?.length ?? 0}`);
 });
